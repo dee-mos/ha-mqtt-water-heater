@@ -35,7 +35,7 @@ from homeassistant.components.mqtt.mixins import (
 )
 
 from homeassistant.components.mqtt import (
-    MQTT_RO_PLATFORM_SCHEMA,
+    CONFIG_SCHEMA,
     DATA_MQTT,
     subscription
 )
@@ -57,7 +57,7 @@ SUPPORT_FLAGS_HEATER = (
 DEFAULT_NAME = "Water Heater"
 DEFAULT_FORCE_UPDATE = False
 PLATFORM_SCHEMA = (
-    MQTT_RO_PLATFORM_SCHEMA.extend(
+    CONFIG_SCHEMA.extend(
         {
             vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
             vol.Optional(CONF_FORCE_UPDATE, default=DEFAULT_FORCE_UPDATE): cv.boolean,
